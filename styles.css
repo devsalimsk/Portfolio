@@ -1,0 +1,396 @@
+/* Style for the modal */
+.no-scroll {
+  overflow: hidden;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 82, 0.7);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Allow scrolling if content is too large */
+}
+
+.modal-content {
+  background-color: #111;
+  color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%; /* Reduce width for mobile */
+  max-width: 1100px;
+  position: relative;
+  overflow-y: auto; /* Enable scrolling inside the modal */
+  max-height: 90vh; /* Limit the modal's height */
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically for small screens */
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .modal-body {
+    flex-direction: row; /* Switch back to row layout on larger screens */
+  }
+
+  .modal-content {
+    width: 70%; /* Increase width for larger screens */
+  }
+}
+
+
+.text-content {
+  max-width: 60%; /* Adjust as needed */
+}
+
+.profile-photo {
+  width: 300px; /* Adjust the size as needed */
+  height: auto;
+  border-radius: 50%; /* Make it round */
+  margin-left: 20px; /* Space between text and photo */
+}
+.circle {
+    -webkit-clip-path: circle(50% at 50% 50%);
+    		clip-path: circle(50% at 50% 50%);
+}
+
+.modal h2, .modal h3 {
+  font-size: 30px;
+  color: #46aef7;
+}
+
+.modal .tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal .tags span {
+  background-color: #222;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.mern-stack {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.mern-stack img {
+  width: auto;
+  height: auto;
+}
+
+/* Close button */
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* About Me Button */
+.about-btn {
+  background-color: #4595eb;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.about-btn:hover {
+  background-color: #347ab8;
+}
+
+.tooltip-container {
+  border: 2px solid #fff;
+  width: 718px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px 15px;
+}
+
+.tooltip-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: default;
+  position: relative;
+}
+
+
+.mongodb {
+  color: #47a248;
+}
+
+.react {
+  color: #61dafb;
+}
+
+.node {
+  color: #8cc84b;
+}
+
+.tooltip-icon img {
+    position: relative;
+    z-index: 10;
+}
+
+.tooltip {
+  font-size: 14px;
+  color: black;
+  position: absolute;
+  top: 5px;
+  border-radius: 15px;
+  padding: 8px 14px;
+  opacity: 0;
+  margin-left: -2px;
+  transition: top 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip-icon:hover .tooltip {
+    top: -48px;
+    opacity: 1;
+}
+
+.tooltip span {
+  position: relative;
+  z-index: 1;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  transform: rotate(45deg) translateX(-50%);
+  left: 50%;
+  bottom: -12px;
+  background-color: inherit;
+}
+
+.mongodb .tooltip {
+  background-color: #47a248;
+  color: white;
+}
+
+.express .tooltip {
+  background-color: white;
+}
+
+.react .tooltip {
+  background-color: #61dafb;
+}
+
+.node .tooltip {
+  background-color: #8cc84b;
+}
+
+
+@media (max-width: 200px) {
+    .tooltip-container {
+        padding-inline: 16px;
+    }
+}
+
+/* For the multi-color text effect */
+.multi-color-text {
+  background: linear-gradient(90deg, #ff3d00, #ffca28, #00e676, #00b0ff);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: color-change 8s ease infinite, smoke-typing 5s steps(30, end) 2s infinite;
+  font-size: 1.5rem;
+  font-family: 'Merriweather', serif;
+  white-space: nowrap;
+  border-right: 2px solid;
+  overflow: hidden;
+}
+
+/* Smokey text animation with typing effect */
+@keyframes smoke-typing {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 25ch; /* Adjust this based on the text length */
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.4),
+                 0 0 30px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1),
+                 0 0 10px rgba(255, 255, 255, 0.1),
+                 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* For the gradient color change */
+@keyframes color-change {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Blinking caret for typing effect */
+@keyframes blink-caret {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* icon hover */
+
+/* Container styling for logos */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px; /* Adjust the gap between items as needed */
+}
+
+/* Individual logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Space between icons and text */
+}
+
+/* Font Awesome icon size and color */
+.logo i {
+  font-size: 2rem; /* Adjust size of the icons */
+  color: #6c757d; /* Default color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Specific colors for each icon on hover */
+.logo i.fab.fa-html5:hover {
+  color: #e34c26; /* HTML color */
+}
+
+.logo i.fab.fa-css3-alt:hover {
+  color: #1572b6; /* CSS color */
+}
+
+.logo i.fab.fa-js-square:hover {
+  color: #f7df1e; /* JavaScript color */
+}
+
+.logo i.fab.fa-flutter:hover {
+  color: #02569b; /* Flutter color */
+}
+
+.logo i.fab.fa-bootstrap:hover {
+  color: #563d7c; /* Bootstrap color */
+}
+
+.logo i.fab.fa-tailwind:hover {
+  color: #38bdf8; /* Tailwind color */
+}
+
+.logo i.fab.fa-git-alt:hover {
+  color: #f1502f; /* Git color */
+}
+
+.logo i.fab.fa-aws:hover {
+  color: #ff9900; /* AWS color */
+}
+
+.logo i.fas.fa-network-wired:hover {
+  color: #00aaff; /* REST API color */
+}
+
+.logo i.fas.fa-database:hover {
+  color: #003b57; /* MySQL color */
+}
+
+.logo i.fas.fa-code:hover {
+  color: #61dafb; /* Code color, typically React blue for coding */
+}
+
+.logo i.fas.fa-cloud:hover{
+  color: #222;
+}
+
+.logo i.fas.fa-mobile-alt:hover{
+  color: white;
+}
+
+.logo i.fas.fa-python:hover{
+  color: rgb(244, 152, 4);
+}
+
+
+.projecttags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color:transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo i {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.logo span {
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+
+/* Disable scroll */
+.no-scroll {
+  overflow: hidden;
+}
+
+
